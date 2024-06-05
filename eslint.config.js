@@ -4,6 +4,10 @@ import pluginVue from 'eslint-plugin-vue'
 
 export default [
   {
+    env: {
+      vitest: true,
+      cypress: true
+    },
     languageOptions: {
       globals: {
         ...globals.browser,
