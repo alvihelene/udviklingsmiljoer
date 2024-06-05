@@ -12,3 +12,19 @@ jobs:
         run: npm run lint
       - name: Testing
         run: npm run test
+E2ETest:
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v4
+        - name: Install packages
+        run: npm install
+        - name: E2E Testing
+        run: npm run e2e
+UnitTest:
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v4
+        - name: Install packages
+        run: npm install
+        - name: Unit Testing
+        run: npm run unit
