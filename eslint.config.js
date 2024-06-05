@@ -2,12 +2,18 @@ import globals from 'globals'
 import pluginJs from '@eslint/js'
 import pluginVue from 'eslint-plugin-vue'
 
-export default [
+module.exports = [
   {
     env: {
       node: true,
       cypress: true
     },
+    plugins: [
+      'cypress' // Add this line
+    ],
+    extends: [
+      'plugin:cypress/recommended' // Add this line
+    ],
     languageOptions: {
       globals: {
         ...globals.browser,
