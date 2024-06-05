@@ -1,4 +1,5 @@
 name: 'Linting and testing'
+
 on: push
 
 jobs:
@@ -6,25 +7,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install packages
+      - name: install packages
         run: npm install
-      - name: Linting
+      - name: run lint
         run: npm run lint
-      - name: Testing
-        run: npm run test
-E2ETest:
+  E2ETest:
     runs-on: ubuntu-latest
     steps:
-        - uses: actions/checkout@v4
-        - name: Install packages
+      - uses: actions/checkout@v4
+      - name: install packages
         run: npm install
-        - name: E2E Testing
-        run: npm run e2e
-UnitTest:
+      - name: run E2E Tests
+        run: npm run test:e2e
+  UnitTest:
     runs-on: ubuntu-latest
     steps:
-        - uses: actions/checkout@v4
-        - name: Install packages
+      - uses: actions/checkout@v4
+      - name: install packages
         run: npm install
-        - name: Unit Testing
-        run: npm run unit
+      - name: Run unit tests
+        run: npm run test:unit
