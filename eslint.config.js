@@ -5,14 +5,18 @@ import pluginVue from 'eslint-plugin-vue'
 export default [
   {
     env: {
-      vitest: true,
+      node: true,
       cypress: true
     },
     languageOptions: {
       globals: {
         ...globals.browser,
         require: true,
-        module: true
+        module: true,
+        describe: true,
+        it: true,
+        cy: true,
+        expect: true
       }
     },
     files: ['src/**/*.{js,mjs,vue}'],
