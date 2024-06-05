@@ -14,11 +14,14 @@ jobs:
   E2ETest:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: install packages
-        run: npm install
-      - name: run E2E Tests
-        run: npm run test:e2e
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          install: npm install
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          start: npm run dev
   UnitTest:
     runs-on: ubuntu-latest
     steps:
